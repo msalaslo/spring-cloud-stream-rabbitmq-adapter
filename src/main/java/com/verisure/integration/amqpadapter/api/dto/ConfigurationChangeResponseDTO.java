@@ -3,8 +3,9 @@ package com.verisure.integration.amqpadapter.api.dto;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 /**
  * Configuration Change Response DTO object.
@@ -12,7 +13,8 @@ import lombok.NoArgsConstructor;
  * @author FaaS [faas@securitasdirect.es]
  *
  */
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder

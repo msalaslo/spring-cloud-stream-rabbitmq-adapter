@@ -29,7 +29,7 @@ public class RemoteOSBMockController {
     
     @PostMapping(produces = "application/json")
     @ResponseBody
-    @ApiOperation(value = "view the list of ALL application items", response = ItemDTO.class)
+    @ApiOperation(value = "view the list of ALL application items", response = ConfigurationChangeResponseDTO.class)
     public void postConfigurationChangeResponse(ConfigurationChangeResponseDTO configurationChange) {
         LOGGER.debug("OSB Mock configuration change response received:" + configurationChange);
     }
