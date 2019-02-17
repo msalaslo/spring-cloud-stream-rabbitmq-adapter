@@ -48,10 +48,6 @@
   </dependencyManagement>
 
   <dependencies>
-   <dependency>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-web</artifactId>
-   </dependency>
 
    <dependency>
     <groupId>org.springframework.boot</groupId>
@@ -114,7 +110,7 @@
 		<groupId>org.springframework.cloud</groupId>
 		<artifactId>spring-cloud-starter-openfeign</artifactId>
 	</dependency>  
-	
+
 	<!-- Dependencies for connect with RabbitMQ -->
     <dependency>
         <groupId>org.springframework.cloud</groupId>
@@ -134,7 +130,6 @@
       <dependency>
           <groupId>org.junit.jupiter</groupId>
           <artifactId>junit-jupiter-engine</artifactId>
-          <version>5.0.0-M1</version>
           <scope>test</scope>
       </dependency>
       <dependency>
@@ -143,7 +138,6 @@
           <version>1.2.5</version>
           <scope>test</scope>
       </dependency>
-      <!-- https://mvnrepository.com/artifact/info.cukes/cucumber-java8 -->
       <dependency>
           <groupId>info.cukes</groupId>
           <artifactId>cucumber-java8</artifactId>
@@ -162,29 +156,24 @@
           <version>1.2.5</version>
           <scope>test</scope>
       </dependency>
-      <!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
       <dependency>
           <groupId>io.rest-assured</groupId>
           <artifactId>rest-assured</artifactId>
-          <version>3.1.0</version>
           <scope>test</scope>
       </dependency>
       <dependency>
           <groupId>io.rest-assured</groupId>
           <artifactId>json-path</artifactId>
-          <version>3.1.0</version>
           <scope>test</scope>
       </dependency>
       <dependency>
           <groupId>io.rest-assured</groupId>
           <artifactId>xml-path</artifactId>
-          <version>3.1.0</version>
           <scope>test</scope>
       </dependency>
       <dependency>
           <groupId>io.rest-assured</groupId>
           <artifactId>json-schema-validator</artifactId>
-          <version>3.1.0</version>
           <scope>test</scope>
       </dependency>
   </dependencies>

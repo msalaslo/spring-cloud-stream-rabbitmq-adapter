@@ -1,4 +1,4 @@
-package com.verisure.integration.amqpadapter.api.dto;
+package com.verisure.integration.amqpadapter.listener.dto;
 
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
@@ -8,8 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
- * Sample DTO object. <b>Please remove for actual project implementation.</b>
- *
+ * Configuration Change Response DTO object.
  * @since 1.0.0
  * @author FaaS [faas@securitasdirect.es]
  *
@@ -19,7 +18,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class ItemDTO extends BaseDTO {
+public class ConfigurationChangeResponseDTO extends BaseDTO {
 
     @ApiModelProperty(notes = "Application item code ", required = true)
     private String applicationCode;

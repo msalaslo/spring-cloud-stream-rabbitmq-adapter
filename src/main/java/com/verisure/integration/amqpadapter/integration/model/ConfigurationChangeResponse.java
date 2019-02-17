@@ -1,4 +1,4 @@
-package com.verisure.integration.amqpadapter.domain.entity;
+package com.verisure.integration.amqpadapter.integration.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -17,7 +17,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class ApplicationItem implements Serializable {
+public class ConfigurationChangeResponse implements Serializable {
 
   private static final long serialVersionUID = 1L;
 

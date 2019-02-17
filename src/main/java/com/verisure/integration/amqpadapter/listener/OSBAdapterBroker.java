@@ -5,8 +5,8 @@ import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.cloud.stream.annotation.StreamListener;
 import org.springframework.stereotype.Service;
 
-import com.verisure.integration.amqpadapter.api.converter.ConfigurationChangeResponseConverter;
-import com.verisure.integration.amqpadapter.api.dto.ConfigurationChangeResponseDTO;
+import com.verisure.integration.amqpadapter.conversion.ConfigurationChangeResponseConverter;
+import com.verisure.integration.amqpadapter.listener.dto.ConfigurationChangeResponseDTO;
 import com.verisure.integration.amqpadapter.service.OSBIntegrationService;
 
 import lombok.extern.slf4j.Slf4j;
@@ -37,11 +37,23 @@ public class OSBAdapterBroker {
      * 
      * @param message {@link ConfigurationChangeResponseDTO} message
      */
-
     @StreamListener(value = ListenerChannel.MESSAGE_FROM_DEVICE_CONFIGURATION)
     public void receivedMessageFromDeviceConfiguration(ConfigurationChangeResponseDTO message) {
         LOGGER.info("Received a device configuration change by AMQP: {}", message.toString());
         osbIntegrationService.sendConfigurationChangeResponse(configurationChangeResponseConverter.toEntity(message));
+    }
+    
+    /**
+     * <p>
+     * Method to process received message from Device Configuration.
+     * </p>
+     * 
+     * @param message {@link ConfigurationChangeResponseDTO} message
+     */
+    @StreamListener(value = ListenerChannel.GENERIC_MESSAGE_FROM_DEVICE_CONFIGURATION)
+    public void genericMessageFromDeviceConfiguration(String message) {
+        LOGGER.info("Received a device configuration change by AMQP, generic message: {}", message.toString());
+        osbIntegrationService.sendGenericMessage(message);
     }
     
 }

@@ -1,7 +1,7 @@
 package com.verisure.integration.amqpadapter.service;
 
 
-import com.verisure.integration.amqpadapter.integration.domain.ConfigurationChangeResponse;
+import com.verisure.integration.amqpadapter.integration.model.ConfigurationChangeResponse;
 
 /**
  * Interface to define the integration with OSB
@@ -17,6 +17,13 @@ public interface OSBIntegrationService {
 	 * @param configurationChangeResponse The configuration change response  to send.
 	 */
     public void sendConfigurationChangeResponse(ConfigurationChangeResponse configurationChangeResponse);
+    
+	/**
+	 * Sends to OSB a configuration change response.
+	 * 
+	 * @param string The message to send.
+	 */
+    public void sendGenericMessage(String message);
 
 
 }

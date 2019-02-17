@@ -1,4 +1,4 @@
-package com.verisure.integration.amqpadapter.api.dto;
+package com.verisure.integration.amqpadapter.listener.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Builder;
@@ -16,7 +16,6 @@ import lombok.Setter;
 @Setter
 @Builder
 @JsonIgnoreProperties(ignoreUnknown = true)
-@SuppressWarnings("squid:S2160") // BaseDTO uses reflection for equals, so the fields of the children are covered.
 public class ErrorDTO extends BaseDTO {
 
     private long timestamp;

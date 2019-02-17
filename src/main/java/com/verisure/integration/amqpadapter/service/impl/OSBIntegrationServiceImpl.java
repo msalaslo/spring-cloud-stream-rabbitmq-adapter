@@ -3,8 +3,8 @@ package com.verisure.integration.amqpadapter.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.verisure.integration.amqpadapter.integration.client.OSBIntegrationClient;
-import com.verisure.integration.amqpadapter.integration.domain.ConfigurationChangeResponse;
+import com.verisure.integration.amqpadapter.integration.model.ConfigurationChangeResponse;
+import com.verisure.integration.amqpadapter.integration.osbclient.OSBIntegrationClient;
 import com.verisure.integration.amqpadapter.service.OSBIntegrationService;
 
 import lombok.extern.slf4j.Slf4j;
@@ -23,14 +23,16 @@ public class OSBIntegrationServiceImpl implements OSBIntegrationService {
 	private OSBIntegrationClient osbIntegrationClient;
 
     
-	/**
-	 * Sends to OSB a configuration change response.
-	 * 
-	 * @param configurationChangeResponse The configuration change response  to send.
-	 */
     @Override
     public void sendConfigurationChangeResponse(ConfigurationChangeResponse configurationChangeResponse) {
+    	LOGGER.info("OSB Service sending information.");
     	osbIntegrationClient.sendConfigurationChangeResponse(configurationChangeResponse);
+    }
+    
+    @Override
+    public void sendGenericMessage(String message){
+    	LOGGER.info("OSB Service generic sending information.");
+    	osbIntegrationClient.sendGenericMessage(message);
     }
 
 }

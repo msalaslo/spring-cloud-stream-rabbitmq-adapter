@@ -1,4 +1,4 @@
-package com.verisure.integration.amqpadapter.api.dto;
+package com.verisure.integration.amqpadapter.listener.dto;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
@@ -6,7 +6,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
 /**
- * Abstract Data Transfer Object (DTO) to be used as the parent of all DTOs in the API layer. It contains the hashCode,
+ * Abstract Data Transfer Object (DTO) to be used as the parent of all DTOs in the Listener layer. It contains the hashCode,
  * toString and equals methods making use of the Apache Commons Lang3 library through its builder classes.
  *
  * @since 1.0.0

@@ -1,11 +1,12 @@
-package com.verisure.integration.amqpadapter.api.converter;
+package com.verisure.integration.amqpadapter.conversion;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
+import org.springframework.stereotype.Component;
 
-import com.verisure.integration.amqpadapter.api.dto.ConfigurationChangeResponseDTO;
-import com.verisure.integration.amqpadapter.integration.domain.ConfigurationChangeResponse;
+import com.verisure.integration.amqpadapter.integration.model.ConfigurationChangeResponse;
+import com.verisure.integration.amqpadapter.listener.dto.ConfigurationChangeResponseDTO;
 
 /**
  * Sample converter used as template. <b>Please remove for actual project implementation.</b>
@@ -14,6 +15,7 @@ import com.verisure.integration.amqpadapter.integration.domain.ConfigurationChan
  * @author FaaS [faas@securitasdirect.es]
  */
 @Mapper(componentModel = "spring")
+@Component
 public interface ConfigurationChangeResponseConverter {
 	
     @Mappings({
