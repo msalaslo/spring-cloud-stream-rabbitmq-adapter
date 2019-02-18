@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.verisure.integration.amqpadapter.integration.model.ConfigurationChangeResponse;
 import com.verisure.integration.amqpadapter.integration.osbclient.OSBIntegrationClient;
 import com.verisure.integration.amqpadapter.service.OSBIntegrationService;
 
@@ -30,17 +29,11 @@ public class OSBIntegrationServiceImpl implements OSBIntegrationService {
 
     
     @Override
-    public void sendConfigurationChangeResponse(ConfigurationChangeResponse configurationChangeResponse) {
-    	LOGGER.info("OSB Service sending information.");
-    	osbIntegrationClient.sendConfigurationChangeResponse(configurationChangeResponse);
-    }
-    
-    @Override
     public void sendGenericMessage(String message) throws IOException{
     	LOGGER.info("OSB Service generic transforming to JSON.");
     	JsonNode rootNode = mapper.readTree(message);
     	LOGGER.info("OSB Service generic sending information. jsonNode: {}", rootNode);
-    	osbIntegrationClient.sendGenericMessage(rootNode);
+    	osbIntegrationClient.postJsonMessage(rootNode);
     }
 
 }
