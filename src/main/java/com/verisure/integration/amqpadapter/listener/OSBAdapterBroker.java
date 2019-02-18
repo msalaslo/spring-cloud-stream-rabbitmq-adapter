@@ -38,8 +38,8 @@ public class OSBAdapterBroker {
      * @param message {@link ConfigurationChangeResponseDTO} message
      * @throws IOException 
      */
-    @StreamListener(value = ListenerChannel.GENERIC_MESSAGE_FROM_DEVICE_CONFIGURATION)
-    public void genericMessageFromDeviceConfiguration(@Payload String message, @Headers MessageHeaders headers) throws IOException {    	
+    @StreamListener(value = ListenerChannel.MESSAGE_FROM_DEVICE_CONFIGURATION)
+    public void messageFromDeviceConfiguration(@Payload String message, @Headers MessageHeaders headers) throws IOException {    	
         LOGGER.info("Received a device configuration change by AMQP, generic message: {}", message.toString());
         LOGGER.info("Received a device configuration change by AMQP, headers: {}", headers.toString());
         osbIntegrationService.sendGenericMessage(message);

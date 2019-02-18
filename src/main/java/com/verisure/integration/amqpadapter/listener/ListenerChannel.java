@@ -15,12 +15,7 @@ public interface ListenerChannel {
      * <p>Channel for received messages from Reception Controller</p>
      */
     public static final String MESSAGE_FROM_DEVICE_CONFIGURATION = "messageFromDeviceConfiguration";
-    
-    /**
-     * <p>Channel for received messages from Reception Controller</p>
-     */
-    public static final String GENERIC_MESSAGE_FROM_DEVICE_CONFIGURATION = "genericMessageFromDeviceConfiguration";
-
+   
     
     /**
      *  Method to process received message from Device Configuration.
@@ -30,12 +25,5 @@ public interface ListenerChannel {
     @Input(MESSAGE_FROM_DEVICE_CONFIGURATION)
     public SubscribableChannel messageFromDeviceConfiguration();
     
-    /**
-     *  Method to process received message from Device Configuration.
-     * 
-     * @return {@link SubscribableChannel}
-     */
-    @Input(GENERIC_MESSAGE_FROM_DEVICE_CONFIGURATION)
-    public SubscribableChannel genericMessageFromDeviceConfiguration();
     
 }
