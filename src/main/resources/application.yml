@@ -2,14 +2,30 @@ spring:
   cloud:
     stream:
       bindings:
-          messageFromDeviceConfiguration: 
-            contentType: application/json
-            group: integration 
+        #The queue name prefix
+        messageFromDeviceConfiguration: 
+          #The queue name sufix
+          group: integration
+          contentType: application/json
+          consumer:
+            #If retry is enabled (maxAttempts > 1), failed messages are delivered to the DLQ after retries are exhausted.
+            max-attempts: 2     
+      rabbit:
+        bindings:
             consumer:
-              #The number of attempts of re-processing an inbound message.
-              maxAttempts: 2
+              #the binder to create and configure dead-letter queues (DLQs) (and a dead-letter exchange DLX, as well as routing infrastructure). 
+              autoBindDlq: false              
+              #If retry is enabled (maxAttempts > 1), failed messages are delivered to the DLQ after retries are exhausted.
+              #requeueRejected: true
+              #republishToDlq causes the binder to publish a failed message to the DLQ (instead of rejecting it).
+              republishToDlq: true
+              #Whether to bind the queue to the destination exchange. Set it to false if you have set up your own infrastructure and have previously created and bound the queue.
               bindQueue: false
+              #The name of the DLQ
+              deadLetterQueueName: messageFromDeviceConfiguration.dlq
+              #Whether to declare the exchange for the destination.
               declareExchange: false
+
 
   rabbitmq:
     addresses: ef102pocmom0v.epi.securitasdirect.local:5672
