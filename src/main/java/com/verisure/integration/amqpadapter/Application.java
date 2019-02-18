@@ -18,7 +18,7 @@ import lombok.extern.slf4j.Slf4j;
 public class Application {
 	
     protected Application() {
-        LOGGER.info("Starting REST microservice");
+        LOGGER.info("Starting AMQP OSB Adapter microservice");
     }
 
     public static void main(String[] args) {

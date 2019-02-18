@@ -1,5 +1,7 @@
 package com.verisure.integration.amqpadapter.listener;
 
+import java.io.IOException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.cloud.stream.annotation.StreamListener;
@@ -49,11 +51,14 @@ public class OSBAdapterBroker {
      * </p>
      * 
      * @param message {@link ConfigurationChangeResponseDTO} message
+     * @throws IOException 
      */
     @StreamListener(value = ListenerChannel.GENERIC_MESSAGE_FROM_DEVICE_CONFIGURATION)
-    public void genericMessageFromDeviceConfiguration(String message) {
+    public void genericMessageFromDeviceConfiguration(String message) throws IOException {    	
         LOGGER.info("Received a device configuration change by AMQP, generic message: {}", message.toString());
-        osbIntegrationService.sendGenericMessage(message);
+        String msg = message.trim().replace(System.getProperty("line.separator"), "");;
+        osbIntegrationService.sendGenericMessage(msg);
+        LOGGER.info("Sent a device configuration change to OSB, generic message: {}", msg);
     }
     
 }

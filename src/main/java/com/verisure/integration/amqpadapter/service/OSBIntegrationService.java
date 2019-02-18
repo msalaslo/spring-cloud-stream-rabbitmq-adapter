@@ -1,6 +1,8 @@
 package com.verisure.integration.amqpadapter.service;
 
 
+import java.io.IOException;
+
 import com.verisure.integration.amqpadapter.integration.model.ConfigurationChangeResponse;
 
 /**
@@ -23,7 +25,7 @@ public interface OSBIntegrationService {
 	 * 
 	 * @param string The message to send.
 	 */
-    public void sendGenericMessage(String message);
+    public void sendGenericMessage(String message) throws IOException;
 
 
 }
