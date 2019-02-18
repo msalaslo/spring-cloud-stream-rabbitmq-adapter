@@ -14,7 +14,7 @@ public interface ListenerChannel {
     /**
      * <p>Channel for received messages from Reception Controller</p>
      */
-    public static final String MESSAGE_FROM_DEVICE_CONFIGURATION = "messageFromDeviceConfiguration";
+    public static final String MESSAGE_FROM_DEVICE_CONFIGURATION = "verisure.ima";
    
     
     /**
