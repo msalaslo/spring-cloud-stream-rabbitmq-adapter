@@ -3,8 +3,11 @@ spring:
     stream:
       bindings:
           messageFromDeviceConfiguration: 
+            contentType: application/json
             group: integration 
             consumer:
+              #The number of attempts of re-processing an inbound message.
+              maxAttempts: 2
               declareExchange: false
               bindQueue: false
   rabbitmq:
@@ -16,11 +19,8 @@ spring:
   # Spring Cloud Sleuth tracing extra fields to propagate (HTTP/Rest and messaging)
   sleuth:
     propagation-keys:
-    - installationNumber     
-    baggage-keys:
-    - installationNumber      
-    baggage_keys:
-    - installationNumber      
+    - installationNumber          
+    
                     
 
 feign:

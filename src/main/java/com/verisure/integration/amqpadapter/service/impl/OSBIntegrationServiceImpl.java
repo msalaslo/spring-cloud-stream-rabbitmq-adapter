@@ -30,9 +30,9 @@ public class OSBIntegrationServiceImpl implements OSBIntegrationService {
     
     @Override
     public void sendGenericMessage(String message) throws IOException{
-    	LOGGER.info("OSB Service generic transforming to JSON.");
+    	LOGGER.debug("OSB Service generic transforming to JSON.");
     	JsonNode rootNode = mapper.readTree(message);
-    	LOGGER.info("OSB Service generic sending information. jsonNode: {}", rootNode);
+    	LOGGER.debug("OSB Service generic sending information. jsonNode: {}", rootNode);
     	osbIntegrationClient.postJsonMessage(rootNode);
     }
 
