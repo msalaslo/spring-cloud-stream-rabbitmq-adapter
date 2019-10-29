@@ -3,6 +3,7 @@ package com.verisure.integration.amqpadapter.service.impl;
 import java.io.IOException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.databind.JsonNode;
@@ -29,6 +30,7 @@ public class OSBIntegrationServiceImpl implements OSBIntegrationService {
 
     
     @Override
+    @Async
     public void sendGenericMessage(String message) throws IOException{
     	LOGGER.debug("OSB Service generic transforming to JSON.");
     	JsonNode rootNode = mapper.readTree(message);

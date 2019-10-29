@@ -15,7 +15,7 @@
         </encoder>
     </appender>
 
-    <logger name="com.verisure" level="DEBUG" />
+    <logger name="com.verisure" level="INFO" />
     <logger name="com.netflix" level="INFO" />
     <logger name="org.springframework" level="INFO" />
 

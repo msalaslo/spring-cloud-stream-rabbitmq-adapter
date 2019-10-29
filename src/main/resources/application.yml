@@ -29,9 +29,9 @@ spring:
 
   rabbitmq:
     addresses: ef102pocmom0v.epi.securitasdirect.local:5672
-    username: integration
-    password: integration
-    virtual-host: vhintegration
+    username: guest
+    password: guest
+    virtual-host: /
 
 
   # Spring Cloud Sleuth tracing extra fields to propagate (HTTP/Rest and messaging)
